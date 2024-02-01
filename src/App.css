@@ -1,38 +1,441 @@
-.App {
+* {
+  font-family: 'Gravity_Regular';
+}
+
+/* Font Faces */
+@font-face {
+  src: url('./gravity/Gravity-LightItalic.otf');
+  font-family: Gravity_Light_Italic;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-Regular.otf');
+  font-family: Gravity_Regular;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-Italic.otf');
+  font-family: Gravity_Italic;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-Light.otf');
+  font-family: Gravity;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-UltraLight.otf');
+  font-family: Gravity_Light;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-UltraLightItalic.otf');
+  font-family: Gravity_Light_Italic;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-BoldItalic.otf');
+  font-family: Gravity_Bold_Italic;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-Bold.otf');
+  font-family: Gravity_Bold;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-Book.otf');
+  font-family: Gravity_Book;
+}
+
+@font-face {
+  src: url('./gravity/Gravity-BookItalic.otf');
+  font-family: Gravity_Book_Italic;
+}
+
+
+
+/* Color Variables */
+:root {
+  /* Background Colors */
+  --white: #ffffff;
+  --grey: #dfdfdf;
+  --lightgrey: #e6e6e6;
+
+  /* Text Colors */
+  --black: #000000;
+  --darkgrey: #343434;
+  --davygrey: #545454;
+  --warmgrey: #8e8b82;
+  --seashell: #f6f3ec;
+  --dirtygrey: #414141;
+
+  /* Categories */
+  --jetblack: #343434;
+  --highlightyellow: #f3e866;
+  --ascentpink: #e28886;
+  --spadream: #79c6eb;
+  --camelgreen: #6cb094;
+
+  /* Memo Pad Headers */
+  --twinkinglights: #fffac2;
+  --tearose: #ebbab9;
+  --paleblue: #aed4e6;
+  --palegreen: #9edfc4;
+
+  /* Receipt Theme 1 */
+  --greekwhite: #fffbeb;
+  --deepindigo: #251749;
+  --steadfast: #495579;
+  --yellowstone: #d0b836;
+
+  /* Receipt Theme 2 */
+  --floralwhite: #fefcf3;
+  --brandyrose: #b88077;
+  --quietpink: #dba39a;
+  --deepblue: #2b3a55;
+
+  /* Receipt Theme 3 */
+  --cornsilk: #fff8e2;
+  --nepal: #98b4aa;
+  --gumleaf: #a7beae;
+  --bluebayoux: #647b7e;
+  --foxred: #b85043;
+
+  --purplewhite: #f7f6f8;
+  --chineseWhite: #f3f3f4;
+  --darkgreen: #28472b9a;
+  --green: #388a4f;
+  --lightgray: #cfc7c7;
+
+  /* Font Sizes */
+  --h2: 46.44px;
+  --h3: 39.06px;
+  --h4: 31.25px;
+  --h5: 23.78px;
+  --p: 19.02px;
+  --large: 25px;
+  --medium: 20px;
+  --normal: 16px;
+  --small: 12px;
+}
+
+* {
+  font-family: 'Gravity_Regular';
+}
+
+.d-none {
+  display: none !important;
+}
+
+/* Top Nav */
+
+.top-nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* SEARCH */
+.search__box {
+  display: flex;
+  flex-direction: row;
+}
+
+.search__label {
+  margin-right: 5px;
+  font-size: var(--h4);
+  font-family: 'Gravity_Bold';
+}
+
+.search__bar {
+  border: none;
+  border-bottom: 2px solid var(--warmgrey);
+  width: 530px;
+  font-size: var(--h4);
+}
+
+.search__bar:focus {
+  transition: 0.5s;
+  outline: none;
+  border-bottom: 2px solid var(--black);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+}
+
+@media screen and (max-width: 600px) {
+  .search {
+    width: 100%;
+    font-size: var(--normal);
+  }
+
+  .search__label,
+  .search__bar {
+    font-size: var(--normal);
+  }
+}
+
+.title {
+  margin-bottom: 25px;
+}
+
+/* CARD */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+
+  max-width: 1350px;
+}
+
+.card {
+  position: relative;
+  background-color: var(--seashell);
+  width: 295px;
+  height: 285px;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+.card__header__title,
+.card__header__number {
+  margin: 0;
+  padding: 0;
+  font-size: var(--h4);
+  font-family: 'Gravity_Bold';
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.memo {
+  background-color: var(--seashell);
+}
+
+.friendship-memo {
+  background-color: var(--twinkinglights);
+}
+
+.love-memo {
+  background-color: var(--tearose);
+}
+
+.sentimental-memo {
+  background-color: var(--paleblue);
+}
+
+.misc-memo {
+  background-color: var(--palegreen);
+}
+
+.card__body {
+  padding: 0 20px;
+}
+
+.body__username {
+  margin: 13px 0;
+  font-family: 'Gravity_Bold';
+}
+
+.body__message {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: var(--normal);
+  font-family: 'Gravity_Book';
+  white-space: pre-wrap;
+}
+
+.read-more {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  color: var(--dirtygrey);
+  font-family: 'Gravity_Regular';
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.fa-chevron-right {
+  font-size: var(--small);
+}
+
+@media screen and (max-width: 1054px) {
+  .card-container {
+    justify-content: space-evenly;
+  }
+}
+
+#button {
+  display: inline-block;
+  position: fixed;
+  right: 10px;
+  bottom: 90px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  border-radius: 4px;
+  background-color: var(--darkgrey);
+  width: 45px;
+  height: 45px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#button.show {
+  visibility: visible;
+  opacity: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#button {
+  display: inline-block;
+  position: fixed;
+  right: 10px;
+  bottom: 90px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition:
+    background-color 0.3s,
+    opacity 0.5s,
+    visibility 0.5s;
+  border-radius: 4px;
+  background-color: var(--darkgrey);
+  width: 45px;
+  height: 45px;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#button::after {
+  content: '\f077';
+  color: var(--white);
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--large);
+  line-height: 40px;
+  font-family: FontAwesome;
+}
+
+#button:hover {
+  cursor: pointer;
+  background-color: var(--davygrey);
+}
+
+#button:active {
+  background-color: var(--black);
+}
+
+#button.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* MESSAGE INFO */
+.box {
+  display: flex;
+  position: fixed;
+  top: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  margin-top: 75px;
+  width: 606px;
+  height: calc(100% - 150px);
+  overflow-y: auto;
+}
+
+.receipt {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.control-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 35px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close-button {
+  cursor: pointer;
+  color: var(--black);
+  font-size: var(--normal);
+  font-family: 'Gravity_Regular';
 }
+
+.receipt__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 40px;
+}
+
+.body__title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.title__number,
+.title__number span {
+  color: var(--black);
+  font-size: var(--h4);
+  font-family: 'Gravity_Bold';
+}
+
+.title__user,
+.title__category {
+  color: var(--black);
+  font-size: var(--h5);
+  font-family: 'Gravity_Regular';
+}
+
+.body__details__title {
+  margin-bottom: 5px;
+  color: var(--black);
+  font-size: var(--normal);
+  font-family: 'Gravity_Regular';
+}
+
+.body__details__message,
+.body__details__location {
+  color: var(--black);
+  font-size: var(--normal);
+  font-family: 'Gravity';
+}
+
+
+
