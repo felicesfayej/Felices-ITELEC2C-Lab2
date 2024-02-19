@@ -1,12 +1,9 @@
 import React from "react";
-import memoClass from "./memoClass";
 
 export function FeaturedCards(props) {
-  const memoClassName = memoClass(props.featObj.memo); // conditional rendering lab activity 3
-
   return (
     <div className="card" id="post-card">
-      <div className={"card__header " + memoClassName}>
+      <div className={"card__header " + props.featObj.memo}>
         <p className="card__header__title">Receipt no.</p>
         <p className="card__header__number">{props.featObj.number}</p>
       </div>

@@ -1,13 +1,9 @@
-// Card.js
 import React from "react";
-import memoClass from "./memoClass";
 
 export function Card(props) {
-  const memoClassName = memoClass(props.postObj.memo); // conditional rendering lab activity 3
-
   return (
     <div className="card" id="post-card">
-      <div className={"card__header " + memoClassName}>
+      <div className={"card__header " + props.postObj.memo}>
         <p className="card__header__title">Receipt no.</p>
         <p className="card__header__number">{props.postObj.number}</p>
       </div>
